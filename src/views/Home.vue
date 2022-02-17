@@ -16,11 +16,8 @@
           <div class="form-panel">
             <!-- 用v-if呈現 -->
             <AddressFrom v-if="step === 1" />
-            <DeliveryForm
-              v-if="step === 2"
-              @feeAmount-chosen="handleFeeAmount"
-            />
-            <PaymentForm v-if="step === 3" />
+            <DeliveryForm v-if="step === 2" @feeAmount-chosen="handleFeeAmount" />
+            <PaymentForm v-if="step === 3"/>
 
             <!-- 用router-view -->
             <!-- <router-view
@@ -91,7 +88,7 @@ export default {
       isFormCompleted: false,
       deliveryFee: 0,
       addressData: {},
-      deliveryData: "",
+      deliveryData: '',
       PaymentData: {},
     };
   },
@@ -116,9 +113,9 @@ export default {
       this.AddressData = address;
     },
     getDelivery(delivery) {
-      this.deliveryData = delivery;
-      console.log(this.deliveryData);
-    },
+      this.deliveryData = delivery
+      console.log(this.deliveryData)
+    }
   },
 };
 </script>
